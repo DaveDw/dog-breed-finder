@@ -2,6 +2,9 @@ var apiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
 var secertApi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
 
 
+//get - retrieves data
+//post - updated,create,delete
+
 
 
 
