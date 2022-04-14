@@ -25,22 +25,22 @@ User input can be accepted as either the income that the user has or the profess
 
 
 ## API’s Used
-* -Glassdoor API key:
-* -RapidAPI.com real estate API
+* Glassdoor API key:
+* RapidAPI.com real estate API
 
 ## Technologies Used
-* -html
-* -css
-* -javascript
-* -jQuery
-* -bootstrap
+* html
+* css
+* javascript
+* jQuery
+* bootstrap
 
 
 
 ## Responsibility Delegations (Who can push what)
 * Brandon: CSS
-* David:Javascript
-* Adam:README
+* David: Javascript
+* Adam: README
 * Sam: HTML
 
 
