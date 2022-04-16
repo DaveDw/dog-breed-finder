@@ -1,5 +1,5 @@
-var apiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
-var secertApi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
+var finderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
+var findersecretApi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
 
 
 //get - retrieves data
@@ -67,5 +67,16 @@ runAPICall(function( ){
     console.log(data)
   })
 })}
+
+fetch ("https://api.thedogapi.com/v1/breeds?limit=10&page=0").then(function(response){
+    return response.json();
+}).then (function(data){
+    console.log(data)
+    for (var i = 0; i < data.length; i++) {
+        console.log(data[i].image.url)
+    }
+})
+
+
 
 animalsQuery()
