@@ -1,10 +1,5 @@
-//append items onto the card 
-//get petfinder api to take the breed into a search for orphans
-//
-
-
-var finderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
-var findersecretApi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
+var petFinderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
+var petFinderSecertapi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
 
 
 //get - retrieves data
@@ -13,7 +8,7 @@ var findersecretApi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
 
 
 
-var access_token = "";
+var petFinderAccessToken = "";
 var timeAccess = null;
 
 // Callback function is only parameter for this async function
@@ -23,15 +18,15 @@ function createToken(callBack) {
     headers: {
       "content-type": "application/x-www-form-urlencoded"
     },
-    body: 'grant_type=client_credentials&client_id=kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B&client_secret=Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
+    body: 'grant_type=client_credentials&client_id=' + petFinderapiKey + '&client_secret='+ petFinderSecertapi
   }
   ).then(function (response) {
     return response.json()
   }).then(function (data) {
-    access_token = data.access_token;
+    petFinderAccessToken = data.petFinderAccessToken;
     timeAccess = new Date();
     callBack()
-    // console.log(data.access_token);
+    // console.log(data.petFinderAccessToken);
   })
 
 }
@@ -58,10 +53,10 @@ function runAPICall(callBack) {
 
 function animalsQuery() {
 runAPICall(function( ){
-  console.log(access_token)
+  console.log(petFinderAccessToken)
   fetch ("https://api.petfinder.com/v2/animals", {
     headers: {
-      Authorization: "Bearer " + access_token
+      Authorization: "Bearer " + petFinderAccessToken
     }
   }).then(
     function(response){
