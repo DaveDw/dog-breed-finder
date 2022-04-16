@@ -6,9 +6,28 @@ body {
 .header {
     text-align: center;
     font-size: 40px;
-    margin: 80px;
+    margin-top: 80px;
+    margin-left: 80px;
+}
+
+nav ul li {
+    display: flex;
+    position: relative;
+    float: right;
+    margin-left: 25px;
+    padding-top: 15px;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .content{
     background-color: white;
+}
+
+#search {
+    
 }
