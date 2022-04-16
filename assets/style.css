@@ -2,3 +2,13 @@ body {
     background-color: lemonchiffon;
     font-family: sans-serif;
 }
+
+.header {
+    text-align: center;
+    font-size: 40px;
+    margin: 80px;
+}
+
+.content{
+    background-color: white;
+}
