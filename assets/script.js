@@ -1,3 +1,8 @@
+//append items onto the card 
+//get petfinder api to take the breed into a search for orphans
+//
+
+
 var finderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
 var findersecretApi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
 
@@ -73,6 +78,9 @@ fetch ("https://api.thedogapi.com/v1/breeds?limit=10&page=0").then(function(resp
 }).then (function(data){
     console.log(data)
     for (var i = 0; i < data.length; i++) {
+        var card = document.createElement("article");
+        document.body.
+        
         console.log(data[i].image.url)
     }
 })
