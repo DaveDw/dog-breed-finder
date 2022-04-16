@@ -74,7 +74,8 @@ fetch ("https://api.thedogapi.com/v1/breeds?limit=10&page=0").then(function(resp
     console.log(data)
     for (var i = 0; i < data.length; i++) {
         var card = document.createElement("article");
-        document.body.
+
+        document.querySelector(".dog-container").appendChild(card)
         
         console.log(data[i].image.url)
     }
