@@ -18,7 +18,7 @@ function createToken(callBack) {
     headers: {
       "content-type": "application/x-www-form-urlencoded"
     },
-    body: 'grant_type=client_credentials&client_id=kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B&client_secret=Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
+    body: 'grant_type=client_credentials&client_id=' + petFinderapiKey + '&client_secret='+ petFinderSecertapi
   }
   ).then(function (response) {
     return response.json()
@@ -67,5 +67,19 @@ runAPICall(function( ){
     console.log(data)
   })
 })}
+
+fetch ("https://api.thedogapi.com/v1/breeds?limit=10&page=0").then(function(response){
+    return response.json();
+}).then (function(data){
+    console.log(data)
+    for (var i = 0; i < data.length; i++) {
+        var card = document.createElement("article");
+        document.body.
+        
+        console.log(data[i].image.url)
+    }
+})
+
+
 
 animalsQuery()
