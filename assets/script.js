@@ -119,5 +119,5 @@ function generateCards() {
 }
 search.addEventListener("click", generateCards);
 
-
+//ndjakbdhjkvh
 animalsQuery()
