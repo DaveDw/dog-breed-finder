@@ -8,7 +8,7 @@ body {
     margin: 80px;
     margin-left: 80px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    -webkit-text-stroke: #C13100;
+    
 }
 
 .topnav ul li {
@@ -28,7 +28,16 @@ a {
 .dog-container {
     background-color: #C13100;
 }
+
+.sideColumn {
+   position: absolute;
+   top: 250px;
+ 
+}
+
 .content{
     background-color: white;
+    margin-left: 20%;
+    padding: 10px;
 }
 
