@@ -29,7 +29,8 @@ function createToken(callBack) {
     ).then(function (response) {
         return response.json()
     }).then(function (data) {
-        petFinderAccessToken = data.petFinderAccessToken;
+      console.log("createToken")
+        petFinderAccessToken = data.access_token;
         timeAccess = new Date();
         callBack()
         // console.log(data.petFinderAccessToken);
@@ -60,7 +61,7 @@ function runAPICall(callBack) {
 function animalsQuery() {
     runAPICall(function () {
         console.log(petFinderAccessToken)
-        fetch("https://upenn-cors-anywhere.herokuapp.com/http://www.example.com/https://api.petfinder.com/v2/animals", {
+        fetch("https://upenn-cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals", {
             headers: {
                 Authorization: "Bearer " + petFinderAccessToken
             }
@@ -120,4 +121,7 @@ function generateCards() {
 search.addEventListener("click", generateCards);
 
 //ndjakbdhjkvh
-animalsQuery()
+
+runAPICall(function() {
+  animalsQuery()
+})
