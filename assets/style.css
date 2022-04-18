@@ -1,16 +1,17 @@
 body {
-    background-color: lemonchiffon;
+    background-color: #FFFBD0;
     font-family: sans-serif;
 }
 
 .header {
-    text-align: center;
     font-size: 40px;
-    margin-top: 80px;
+    margin: 80px;
     margin-left: 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    -webkit-text-stroke: #C13100;
 }
 
-nav ul li {
+.topnav ul li {
     display: flex;
     position: relative;
     float: right;
@@ -24,10 +25,10 @@ a {
     text-decoration: none;
 }
 
+.dog-container {
+    background-color: #C13100;
+}
 .content{
     background-color: white;
 }
 
-#search {
-    
-}
