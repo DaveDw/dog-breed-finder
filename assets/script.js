@@ -30,7 +30,8 @@ function createToken(callBack) {
     ).then(function (response) {
         return response.json()
     }).then(function (data) {
-        petFinderAccessToken = data.petFinderAccessToken;
+      console.log("createToken")
+        petFinderAccessToken = data.access_token;
         timeAccess = new Date();
         callBack()
         // console.log(data.petFinderAccessToken);
@@ -124,4 +125,8 @@ function generateCards() {
 }
 search.addEventListener("click", generateCards);
 
-animalsQuery()
+//ndjakbdhjkvh
+
+runAPICall(function() {
+  animalsQuery()
+})

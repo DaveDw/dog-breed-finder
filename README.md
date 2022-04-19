@@ -5,7 +5,7 @@
 ### Project Proposal Brief: Adopt-A-Furry-Friend
 ## Group 4: David Dwight, Sam Patel, Adam McLane, Brandon Cheung
 
-Use PetFinder API and TheDogAPI to look up available dogs by breed upon inputting zipcode that are available for adoption in nearby areas.
+Use PetFinder API and TheDogAPI to look up dogs that are available for adoption.
 
 As a user, I want to be able to search up different breeds of dogs by pictures.
 
