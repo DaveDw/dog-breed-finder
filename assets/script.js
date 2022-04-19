@@ -78,7 +78,9 @@ function animalsQuery() {
 
 function generateCards() {
     var textInput = document.querySelector("#search");
-    fetch("https://api.thedogapi.com/v1/breeds?limit=10&page=0").then(function (response) {
+    var imgurlStart = "https://cdn2.thedogapi.com/images/"
+    var imgurlEnd = ".jpg"
+    fetch("https://api.thedogapi.com/v1/breeds/search?q=" + textInput.value).then(function (response) {
         return response.json();
     }).then(function (data) {
         console.log(data)
@@ -90,12 +92,14 @@ function generateCards() {
             var nameTag = document.createElement("h2");
             nameTag.textContent = "Breed: " + name;
             card.appendChild(nameTag);
-            
+
             //append image
-            var url = data[i].image.url;
-            var imgTag = document.createElement("img");
-            imgTag.setAttribute("src",url);
-            card.appendChild(imgTag);
+            if (data[i].reference_image_id) {
+                var url = imgurlStart + data[i].reference_image_id + imgurlEnd;
+                var imgTag = document.createElement("img");
+                imgTag.setAttribute("src", url);
+                card.appendChild(imgTag);
+            }
 
             //now append height/weight, temperament, and life span (unordered list)
             var list = document.createElement("ul");
@@ -115,7 +119,6 @@ function generateCards() {
             document.querySelector(".dog-container").appendChild(card);
 
 
-            console.log(data[i].image.url)
         }
     })
 }
