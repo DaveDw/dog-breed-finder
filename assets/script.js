@@ -1,6 +1,7 @@
 //create click event for the cards to search for available dogs with the petfiinder api
 //resize the cards so that the boundaries of the clicks are clear and the images are uniform
 //make the page display the results either in an empty tab or in a generated container on the page
+//change click event to submit and make the search bar clear itself
 
 
 
@@ -60,7 +61,7 @@ function runAPICall(callBack) {
 function animalsQuery() {
     runAPICall(function () {
         console.log(petFinderAccessToken)
-        fetch("https://upenn-cors-anywhere.herokuapp.com/http://www.example.com/https://api.petfinder.com/v2/animals", {
+        fetch("https://upenn-cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals", {
             headers: {
                 Authorization: "Bearer " + petFinderAccessToken
             }
@@ -76,7 +77,7 @@ function animalsQuery() {
 }
 
 function generateCards() {
-
+    var textInput = document.querySelector("#search");
     fetch("https://api.thedogapi.com/v1/breeds?limit=10&page=0").then(function (response) {
         return response.json();
     }).then(function (data) {
@@ -89,12 +90,12 @@ function generateCards() {
             var nameTag = document.createElement("h2");
             nameTag.textContent = "Breed: " + name;
             card.appendChild(nameTag);
-
+            
+            //append image
             var url = data[i].image.url;
             var imgTag = document.createElement("img");
             imgTag.setAttribute("src",url);
             card.appendChild(imgTag);
-            document.querySelector(".dog-container").appendChild(card);
 
             //now append height/weight, temperament, and life span (unordered list)
             var list = document.createElement("ul");
@@ -110,7 +111,8 @@ function generateCards() {
             list.appendChild(listItem2);
             list.appendChild(listItem3);
 
-            document.querySelector(".dog-container").appendChild(list);
+            card.appendChild(list);
+            document.querySelector(".dog-container").appendChild(card);
 
 
             console.log(data[i].image.url)
@@ -119,5 +121,4 @@ function generateCards() {
 }
 search.addEventListener("click", generateCards);
 
-//ndjakbdhjkvh
 animalsQuery()
