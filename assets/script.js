@@ -17,6 +17,8 @@ var search = document.querySelector("#searchBtn");
 
 var petFinderAccessToken = "";
 var timeAccess = null;
+var breedName = ''
+
 
 // Callback function is only parameter for this async function
 function createToken(callBack) {
@@ -78,15 +80,16 @@ function animalsQuery() {
 }
 
 function generateCards() {
-  var textInput = document.querySelector("#search");
-  var imgurlStart = "https://cdn2.thedogapi.com/images/"
-  var imgurlEnd = ".jpg"
-  fetch("https://api.thedogapi.com/v1/breeds/search?q=" + textInput.value).then(function (response) {
-    return response.json();
-  }).then(function (data) {
-    console.log(data)
-    for (var i = 0; i < data.length; i++) {
-      var card = document.createElement("article");
+    var textInput = document.querySelector("#search");
+    var imgurlStart = "https://cdn2.thedogapi.com/images/"
+    var imgurlEnd = ".jpg"
+    document.querySelector(".dog-container").innerHTML = '';
+    fetch("https://api.thedogapi.com/v1/breeds/search?q=" + textInput.value).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log(data)
+        for (var i = 0; i < data.length; i++) {
+            var card = document.createElement("article");
 
       //append breed name (h2)
       var name = data[i].name;
