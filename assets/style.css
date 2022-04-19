@@ -8,6 +8,7 @@ body {
     margin: 80px;
     margin-left: 80px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: oblique;
     
 }
 
@@ -30,6 +31,8 @@ a {
     margin-left: 20%;
     padding-left: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
+    color:white;
 }
 
 .sideColumn {
@@ -51,4 +54,19 @@ img {
     border-style: solid;
     border-width: 3px; color: #FFFBD0;
     cursor: pointer;;
+    border-radius: 10%;
+}
+
+/* article {
+    display: flex;
+    justify-content: space-between;
+} */
+
+.footer {
+    margin: 50px;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px){
+    
 }
