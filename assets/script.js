@@ -7,7 +7,7 @@
 var petFinderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
 var petFinderSecertapi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
 var search = document.querySelector("#searchBtn");
-
+var searchInput = document.querySelector('#search')
 //get - retrieves data
 //post - updated,create,delete
 
@@ -16,6 +16,20 @@ var search = document.querySelector("#searchBtn");
 
 var petFinderAccessToken = "";
 var timeAccess = null;
+var breedName = ''
+
+
+function searchText() {
+  var breedName = searchInput.trim();
+  if (breedName) {
+    generateCards(breedName)
+
+    console.log(breedName)
+  }
+  else {
+    alert('Enter Dog breed')
+  }
+}
 
 // Callback function is only parameter for this async function
 function createToken(callBack) {
