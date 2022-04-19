@@ -1,5 +1,12 @@
+:root {
+    --burntorange: #CC6600;
+    --lemonchiffon: #FFFBD0;
+    --lightorange: #FF9900;
+    --bloodorange: #C13100;
+}
+
 body {
-    background-color: #FFFBD0;
+    background-color: var(--lemonchiffon);
     font-family: sans-serif;
 }
 
@@ -9,7 +16,7 @@ body {
     margin-left: 80px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: oblique;
-    
+
 }
 
 .topnav ul li {
@@ -27,21 +34,21 @@ a {
 }
 
 .dog-container {
-    background-color: #C13100;
+    background-color: var(--bloodorange);
     margin-left: 20%;
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    color:white;
+    color: white;
 }
 
 .sideColumn {
-   position: absolute;
-   top: 200px;
- 
+    position: absolute;
+    top: 200px;
+
 }
 
-.content{
+.content {
     background-color: white;
     margin-left: 20%;
     padding: 10px;
@@ -52,8 +59,10 @@ img {
     width: 275px;
     margin: 4px;
     border-style: solid;
-    border-width: 3px; color: #FFFBD0;
-    cursor: pointer;;
+    border-width: 3px;
+    color: var(--lemonchiffon);
+    cursor: pointer;
+    ;
     border-radius: 10%;
 }
 
@@ -67,6 +76,4 @@ img {
     text-align: center;
 }
 
-@media screen and (max-width: 600px){
-    
-}
+@media screen and (max-width: 600px) {}
