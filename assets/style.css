@@ -45,7 +45,6 @@ a {
 .sideColumn {
     position: absolute;
     top: 200px;
-
 }
 
 .content {
@@ -61,15 +60,14 @@ img {
     border-style: solid;
     border-width: 3px;
     color: var(--lemonchiffon);
-    cursor: pointer;
-    ;
+    /* cursor: pointer; */
     border-radius: 10%;
 }
 
-/* article {
-    display: flex;
-    justify-content: space-between;
-} */
+article {
+   cursor: pointer;
+   border-bottom: dashed 2px var(--burntorange);
+}
 
 .footer {
     margin: 50px;
