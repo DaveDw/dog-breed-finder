@@ -4,7 +4,7 @@
 //change click event to submit and make the search bar clear itself
 
 
-
+var side = document.querySelector(".sideColumn")
 var petFinderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
 var petFinderSecertapi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
 var search = document.querySelector("#searchBtn");
@@ -79,15 +79,21 @@ function animalsQuery() {
     })
 }
 
-function generateCards() {
+function generateCards(event) {
+    event.preventDefault();
+
     var textInput = document.querySelector("#search");
     var imgurlStart = "https://cdn2.thedogapi.com/images/"
     var imgurlEnd = ".jpg"
+
     document.querySelector(".dog-container").innerHTML = '';
+
     fetch("https://api.thedogapi.com/v1/breeds/search?q=" + textInput.value).then(function (response) {
         return response.json();
     }).then(function (data) {
         console.log(data)
+
+        //creates the cards
         for (var i = 0; i < data.length; i++) {
             var card = document.createElement("article");
 
@@ -122,13 +128,13 @@ function generateCards() {
             card.appendChild(list);
             document.querySelector(".dog-container").appendChild(card);
 
-
+            //clear the search bar
+            textInput.value = "";
         }
     })
 }
-search.addEventListener("click", generateCards);
+side.addEventListener("submit", generateCards);
 
-//ndjakbdhjkvh
 
 runAPICall(function() {
   animalsQuery()
