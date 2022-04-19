@@ -81,6 +81,8 @@ function generateCards() {
     var textInput = document.querySelector("#search");
     var imgurlStart = "https://cdn2.thedogapi.com/images/"
     var imgurlEnd = ".jpg"
+
+    
     fetch("https://api.thedogapi.com/v1/breeds/search?q=" + textInput.value).then(function (response) {
         return response.json();
     }).then(function (data) {
