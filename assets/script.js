@@ -139,8 +139,11 @@ function generateCards(event) {
         }
     })
 }
+var storedSearches = localStorage.setItem("lastSearch", JSON.stringify(searchHistory));
 
+if (storedSearches != null){
 searchHistory = JSON.parse(localStorage.getItem("lastSearch"));
+}
 
 side.addEventListener("submit", generateCards);
 
