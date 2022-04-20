@@ -1,4 +1,4 @@
-# The Re-Tail Store
+### The Re-Tail Store
 ## Group 4: David Dwight, Sam Patel, Adam McLane, Brandon Cheung
 
 ## Obejective:
