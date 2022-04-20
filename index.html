@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <header class="header">Adopt a Furry Friend
+    <header class="header">
         <!-- Possible nav links -->
-        <nav>
+        <nav class="topnav">
             <ul>
                 <li>
                     <a href="#breeds">Find Friend</a>
@@ -24,23 +24,38 @@
             </ul>
 
         </nav>
+        Adopt a Furry Friend
     </header>
 
 
-    <main class="dog-container" id="breeds">Dogs By Breed
+    <main class="dog-container" id="breeds">
+        <h1>Dogs By Breed</h1>
         <!-- img cards located here -->
         <div></div>
     </main>
 
-    <section class="content" id="aboutUs">About Us</section>
-    <!-- Not sure what this will be for yet -->
-    <aside class="sideColumn">Search</aside>
-        <input type="input" placeholder="Find a Furry Friend..." id="search">
-        <button id="searchBtn">Search</button>
-    
+    <section class="content" id="aboutUs">
+        <h1>About The Re-Tail Store</h1>
+        <p>The Re-Tail Store is an online database that will help you find a dog for you by matching up the breed you 
+            would like with available dogs in the area that are up for adoption.
+
+            We use TheDogAPI to show the kinds of breeds that exist, and then use the Petfinder API to determine if a 
+            particular breed is up for adoption in your area.
+
+        </p>
+    </section>
+
+    <aside class="sideColumn">
+        <h1>Search</h1>
+        <input type="input" placeholder="Find a Furry Friend..." type="text" id="search">
+        <button id="searchBtn"  >Search</button> 
+        <!-- added type=text" -->
+    </aside>
     <!-- Side bar for list? Search? -->
     <div class="address"></div>
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <p>Project Partners: Adam McLane, Brandon Cheung, David Dwight, Sam Patel </p>
+    </footer>
     <script src="assets\script.js"></script>
 </body>
 
