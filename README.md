@@ -10,6 +10,7 @@ Use TheDogAPI and Petfinder API to lookup breeds of dogs, and then determine if 
 2. As a user, upon clicking on a picture, I am redirected to available dogs up for adoption in the area.
 
 ## Wireframe:
+TBD
 
 ## Steps to Accomplish the Project:
 * Get approval of APIs
