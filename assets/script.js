@@ -4,9 +4,9 @@
 //change click event to submit and make the search bar clear itself
 
 
-
-var petFinderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B'
-var petFinderSecertapi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc'
+var side = document.querySelector(".sideColumn");
+var petFinderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B';
+var petFinderSecertapi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc';
 var search = document.querySelector("#searchBtn");
 
 //get - retrieves data
@@ -17,7 +17,8 @@ var search = document.querySelector("#searchBtn");
 
 var petFinderAccessToken = "";
 var timeAccess = null;
-var breedName = ''
+var breedName = '';
+var searchHistory = [];
 
 
 // Callback function is only parameter for this async function
@@ -30,12 +31,12 @@ function createToken(callBack) {
     body: 'grant_type=client_credentials&client_id=' + petFinderapiKey + '&client_secret=' + petFinderSecertapi
   }
   ).then(function (response) {
-    return response.json()
+    return response.json();
   }).then(function (data) {
-    console.log("createToken")
+    console.log("createToken");
     petFinderAccessToken = data.access_token;
     timeAccess = new Date();
-    callBack()
+    callBack();
     // console.log(data.petFinderAccessToken);
   })
 
@@ -55,7 +56,7 @@ function runAPICall(callBack) {
       createToken(callBack);
     }
     else {
-      callBack()
+      callBack();
     }
   }
 
@@ -74,20 +75,31 @@ function animalsQuery() {
 
       }
     ).then(function (data) {
-      console.log(data)
+      console.log(data);
     })
   })
 }
 
-function generateCards() {
+function generateCards(event) {
+    event.preventDefault();
+
     var textInput = document.querySelector("#search");
-    var imgurlStart = "https://cdn2.thedogapi.com/images/"
-    var imgurlEnd = ".jpg"
+    var imgurlStart = "https://cdn2.thedogapi.com/images/";
+    var imgurlEnd = ".jpg";
+    searchHistory.push(textInput.value);
+
+    if (textInput.value){
+        localStorage.setItem("lastSearch", JSON.stringify(searchHistory));
+    }
+
     document.querySelector(".dog-container").innerHTML = '';
+
     fetch("https://api.thedogapi.com/v1/breeds/search?q=" + textInput.value).then(function (response) {
         return response.json();
     }).then(function (data) {
-        console.log(data)
+        console.log(data);
+
+        //creates the cards
         for (var i = 0; i < data.length; i++) {
             var card = document.createElement("article");
 
@@ -122,22 +134,20 @@ function generateCards() {
       card.appendChild(list);
       document.querySelector(".dog-container").appendChild(card);
 
+            //clear the search bar
+            textInput.value = "";
+        }
+    })
+}
+var storedSearches = localStorage.setItem("lastSearch", JSON.stringify(searchHistory));
 
-    }
-  })
+if (storedSearches != null){
+searchHistory = JSON.parse(localStorage.getItem("lastSearch"));
 }
 
-var animalSearch = function(event){
-    document.querySelector("article")
-    console.log(animalSearch)
-}
+side.addEventListener("submit", generateCards);
 
-
-
-search.addEventListener("click", generateCards);
-animalSearch.addEventListener("click", animalSearch)
-//ndjakbdhjkvh
 
 runAPICall(function () {
-  animalsQuery()
+  animalsQuery();
 })
