@@ -112,8 +112,8 @@ function generateCards() {
       var listItem3 = document.createElement("li");
 
       listItem1.textContent = "Life span: " + data[i].life_span;
-      listItem2.textContent = "Height: " + data[i].height.imperial + " weight: " + data[i].weight.imperial;
-      listItem3.textContent = "temperament: " + data[i].temperament;
+      listItem2.textContent = "Height: " + data[i].height.imperial + " inches: Weight: " + data[i].weight.imperial + " lbs";
+      listItem3.textContent = "Temperament: " + data[i].temperament;
 
       list.appendChild(listItem1);
       list.appendChild(listItem2);
