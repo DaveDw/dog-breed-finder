@@ -45,6 +45,7 @@ a {
 .sideColumn {
     position: absolute;
     top: 200px;
+    margin-left: 20px;
 }
 
 .content {
@@ -74,4 +75,6 @@ article {
     text-align: center;
 }
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {
+
+}

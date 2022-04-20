@@ -2,7 +2,7 @@
 ### Project Proposal Brief
 
 
-### Project Proposal Brief: Adopt-A-Furry-Friend
+### Project Proposal Brief: The Re-Tail Store
 ## Group 4: David Dwight, Sam Patel, Adam McLane, Brandon Cheung
 
 Use PetFinder API and TheDogAPI to look up dogs that are available for adoption.
