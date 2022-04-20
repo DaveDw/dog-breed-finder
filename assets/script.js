@@ -126,8 +126,16 @@ function generateCards() {
     }
   })
 }
-search.addEventListener("click", generateCards);
 
+var animalSearch = function(event){
+    document.querySelector("article")
+    console.log(animalSearch)
+}
+
+
+
+search.addEventListener("click", generateCards);
+animalSearch.addEventListener("click", animalSearch)
 //ndjakbdhjkvh
 
 runAPICall(function () {
