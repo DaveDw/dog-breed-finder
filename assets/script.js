@@ -62,6 +62,8 @@ function runAPICall(callBack) {
 
 }
 
+
+
 function animalsQuery(breed) {
 
   runAPICall(function () {
@@ -79,6 +81,26 @@ function animalsQuery(breed) {
       }
     ).then(function (data) {
       console.log(data);
+      var dialogBox = document.querySelector('.address')
+        dialogBox.innerHTML = '';
+      for (var i=0; i < data.animals.length; i++){
+        
+        var petName = document.createElement('p');
+        petName.textContent = data.animals[i].name // add more things here
+        var contact = document.createElement('p');
+        contact.textContent = data.animals[i].contact.email
+        dialogBox.appendChild(petName)
+        dialogBox.appendChild(contact)
+      }
+      $(function() {  
+        $( ".address" ).dialog({  
+           autoOpen: false,  
+        });  
+        // $( "article" ).click(function() {
+        //   console.log('hello')  
+           $( ".address" ).dialog( "open" );
+        // });  
+      }); 
     })
   })
 }
@@ -145,6 +167,15 @@ function generateCards(event) {
         }
     })
 }
+
+
+ 
+
+function articleListner() {
+  console.log(this)
+}
+
+
 var storedSearches = localStorage.setItem("lastSearch", JSON.stringify(searchHistory));
 
 if (storedSearches != null){
