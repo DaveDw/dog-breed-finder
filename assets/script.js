@@ -62,10 +62,13 @@ function runAPICall(callBack) {
 
 }
 
-function animalsQuery() {
+function animalsQuery(breed) {
+
   runAPICall(function () {
+      var location = "PA";
+
     console.log(petFinderAccessToken)
-    fetch("https://upenn-cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals", {
+    fetch("https://upenn-cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?breed=" + breed + "&location=" + location, {
       headers: {
         Authorization: "Bearer " + petFinderAccessToken
       }
@@ -108,6 +111,9 @@ function generateCards(event) {
       var nameTag = document.createElement("h2");
       nameTag.textContent = "Breed: " + name;
       card.appendChild(nameTag);
+      card.addEventListener("click", function (){
+          animalsQuery(name);
+      })
 
       //append image
       if (data[i].reference_image_id) {
@@ -142,12 +148,12 @@ function generateCards(event) {
 var storedSearches = localStorage.setItem("lastSearch", JSON.stringify(searchHistory));
 
 if (storedSearches != null){
-searchHistory = JSON.parse(localStorage.getItem("lastSearch"));
+    searchHistory = JSON.parse(localStorage.getItem("lastSearch"));
 }
 
 side.addEventListener("submit", generateCards);
 
 
-runAPICall(function () {
-  animalsQuery();
-})
+// runAPICall(function () {
+//   animalsQuery();
+// })
