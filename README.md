@@ -9,7 +9,7 @@
 
 ## Group 4: David Dwight, Sam Patel, Adam McLane, Brandon Cheung
 
-## Obejective:
+## Objective:
 Use TheDogAPI and Petfinder API to lookup breeds of dogs, and then determine if those breeds are available for adoption in the area.
 
 ## User Story:
