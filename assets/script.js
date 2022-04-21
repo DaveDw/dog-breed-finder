@@ -96,8 +96,6 @@ function animalsQuery(breed) {
         $( ".address" ).dialog({  
            autoOpen: false,  
         });  
-        // $( "article" ).click(function() {
-        //   console.log('hello')  
            $( ".address" ).dialog( "open" );
         // });  
       }); 
