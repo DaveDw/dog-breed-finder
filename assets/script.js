@@ -92,7 +92,8 @@ function animalsQuery(breed) {
         var website = document.createElement('p');
         website.textContent = data.animals[i].url
         var petImg = document.createElement("img");
-        petImg.innerHTML = data.animals[i].photos[0]
+        petImg.innerHTML = data.animals[i].photos[0];
+        console.log(petImg)
         dialogBox.appendChild(petName)
         dialogBox.appendChild(contact)
         dialogBox.appendChild(website)
