@@ -70,6 +70,14 @@ article {
    border-bottom: dashed 2px var(--burntorange);
 }
 
+.dogName {
+    font-weight: bold;
+}
+
+.dogLink {
+    text-decoration: underline;
+}
+
 .footer {
     margin: 50px;
     text-align: center;

@@ -81,23 +81,38 @@ function animalsQuery(breed) {
       }
     ).then(function (data) {
       console.log(data);
-      var dialogBox = document.querySelector('.address')
+      var dialogBox = document.querySelector('.address');
         dialogBox.innerHTML = '';
+
       for (var i=0; i < data.animals.length; i++){
         
         var petName = document.createElement('p');
-        petName.textContent = data.animals[i].name // add more things here
+        petName.setAttribute('class', 'dogName');
+        petName.textContent = data.animals[i].name; // add more things here
+
         var contact = document.createElement('p');
-        contact.textContent = data.animals[i].contact.email
-        var website = document.createElement('p');
-        website.textContent = data.animals[i].url
-        var petImg = document.createElement("img");
-        petImg.innerHTML = data.animals[i].photos[0];
-        console.log(petImg)
-        dialogBox.appendChild(petName)
-        dialogBox.appendChild(contact)
-        dialogBox.appendChild(website)
-        dialogBox.appendChild(petImg)
+        contact.textContent = data.animals[i].contact.email;
+
+        var website = document.createElement('a');
+        website.setAttribute('class', 'dogLink');
+        website.setAttribute('href', data.animals[i].url);
+        website.setAttribute('target', '_blank');
+        website.innerHTML = "Click to see " + data.animals[i].name + "'s Petfinder Profile.";
+        // website.textContent = data.animals[i].url;
+
+        // var petImg = document.createElement("img");
+        // petImg.setAttribute('class', 'dialogImg');
+        // petImg.setAttribute('src', data.animals[i].photos[0]);
+
+        console.log(data.animals[i].photos[0]);
+        // petImg.innerHTML = data.animals[i].photos[0];
+
+        // console.log(petImg);
+
+        dialogBox.appendChild(petName);
+        dialogBox.appendChild(contact);
+        dialogBox.appendChild(website);
+        // dialogBox.appendChild(petImg);
       }
       $(function() {  
         $( ".address" ).dialog({  
