@@ -89,8 +89,14 @@ function animalsQuery(breed) {
         petName.textContent = data.animals[i].name // add more things here
         var contact = document.createElement('p');
         contact.textContent = data.animals[i].contact.email
+        var website = document.createElement('p');
+        website.textContent = data.animals[i].url
+        var petImg = document.createElement("img");
+        petImg.innerHTML = data.animals[i].photos[0]
         dialogBox.appendChild(petName)
         dialogBox.appendChild(contact)
+        dialogBox.appendChild(website)
+        dialogBox.appendChild(petImg)
       }
       $(function() {  
         $( ".address" ).dialog({  
