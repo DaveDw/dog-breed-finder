@@ -81,23 +81,32 @@ function animalsQuery(breed) {
       }
     ).then(function (data) {
       console.log(data);
-      var dialogBox = document.querySelector('.address')
+      var dialogBox = document.querySelector('.address');
         dialogBox.innerHTML = '';
+
       for (var i=0; i < data.animals.length; i++){
         
         var petName = document.createElement('p');
-        petName.textContent = data.animals[i].name // add more things here
+        petName.textContent = data.animals[i].name; // add more things here
+
         var contact = document.createElement('p');
-        contact.textContent = data.animals[i].contact.email
-        var website = document.createElement('p');
-        website.textContent = data.animals[i].url
+        contact.textContent = data.animals[i].contact.email;
+
+        var website = document.createElement('a');
+        website.setAttribute('href', data.animals[i].url);
+        website.setAttribute('target', '_blank');
+        website.textContent = data.animals[i].url;
+
         var petImg = document.createElement("img");
+        petImg.setAttribute('class', 'dialogImg');
         petImg.innerHTML = data.animals[i].photos[0];
-        console.log(petImg)
-        dialogBox.appendChild(petName)
-        dialogBox.appendChild(contact)
-        dialogBox.appendChild(website)
-        dialogBox.appendChild(petImg)
+
+        console.log(petImg);
+
+        dialogBox.appendChild(petName);
+        dialogBox.appendChild(contact);
+        dialogBox.appendChild(website);
+        dialogBox.appendChild(petImg);
       }
       $(function() {  
         $( ".address" ).dialog({  
