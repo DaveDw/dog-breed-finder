@@ -5,10 +5,12 @@
     --bloodorange: #C13100;
 }
 
+
 body {
     background-color: var(--lemonchiffon);
     font-family: sans-serif;
 }
+
 
 .header {
     font-size: 40px;
@@ -18,6 +20,11 @@ body {
     font-style: oblique;
 
 }
+/* .backgroundpic {
+    opacity: 0.3;
+    width: 100%;
+    height: auto;
+} */
 
 .topnav ul li {
     display: flex;
