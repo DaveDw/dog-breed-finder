@@ -1,13 +1,8 @@
-//create click event for the cards to search for available dogs with the petfiinder api
-//resize the cards so that the boundaries of the clicks are clear and the images are uniform
-//make the page display the results either in an empty tab or in a generated container on the page
-//change click event to submit and make the search bar clear itself
-
-
 var side = document.querySelector(".sideColumn");
 var petFinderapiKey = 'kvthm0Oyqunp3U0nDS5Xv91qQczAhQqUM6xg7fpKf9s97cef4B';
 var petFinderSecertapi = 'Ii6bRXzl7o3ZJs3kbf84OyqduNUMaC0E78YsPAdc';
 var search = document.querySelector("#searchBtn");
+var latestSearch = document.querySelector(".latest-search");
 
 //get - retrieves data
 //post - updated,create,delete
@@ -135,6 +130,7 @@ function generateCards(event) {
 
     if (textInput.value){
         localStorage.setItem("lastSearch", JSON.stringify(searchHistory));
+        latestSearch.innerHTML = textInput.value;
     }
 
     document.querySelector(".dog-container").innerHTML = '';
@@ -195,11 +191,15 @@ function articleListner() {
   console.log(this)
 }
 
+//setting the values in the local storage witht the key lastSearch equal to the search history array ANDTHEN settint the variable equal to that
+//get the info from local Storage and place it in the variable atoredSearches
+var storedSearches = JSON.parse(localStorage.getItem("lastSearch"));
 
-var storedSearches = localStorage.setItem("lastSearch", JSON.stringify(searchHistory));
-
+//if there are values in the variable, set it equal to the the values with the key lastSearch
+//
 if (storedSearches != null){
     searchHistory = JSON.parse(localStorage.getItem("lastSearch"));
+    latestSearch.innerHTML = searchHistory[searchHistory.length-1];
 }
 
 side.addEventListener("submit", generateCards);
